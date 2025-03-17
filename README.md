@@ -10,4 +10,5 @@ in the command line, after you have navigated to the desired file, type the foll
 1. git clone https://github.com/EvaNtziou/CI-CD_Assignment.git
 2. cd your-repository
 3. mvn install (if necessary to install dependencies)
-   And that's it!
+   
+And that's it!

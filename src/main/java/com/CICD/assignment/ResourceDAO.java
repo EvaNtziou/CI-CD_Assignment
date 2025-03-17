@@ -10,17 +10,17 @@ public class ResourceDAO {
 
     // Fetch all resources from the database
     public List<Resource_Stock> getAllResources() {
-        List<Resource_Stock> resources = new ArrayList<>();
-        String sql = "SELECT * FROM resource_stock";
+        final List<Resource_Stock> resources = new ArrayList<>();
+        final String sql = "SELECT * FROM resource_stock";
 
         try (Connection con = db.getConnection();
              Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                long id = rs.getLong("id");
-                String name = rs.getString("name");
-                int quantity = rs.getInt("quantity");
+                final long id = rs.getLong("id");
+                final String name = rs.getString("name");
+                final int quantity = rs.getInt("quantity");
 
                 resources.add(new Resource_Stock(id, name, quantity));
             }
@@ -32,7 +32,7 @@ public class ResourceDAO {
 
     // Fetch resource by ID
     public Resource_Stock getResourceById(long id) {
-        String sql = "SELECT * FROM resource_stock WHERE id = ?";
+        final String sql = "SELECT * FROM resource_stock WHERE id = ?";
         Resource_Stock resource = null;
 
         try (Connection con = db.getConnection();
@@ -40,8 +40,8 @@ public class ResourceDAO {
             stmt.setLong(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    String name = rs.getString("name");
-                    int quantity = rs.getInt("quantity");
+                    final String name = rs.getString("name");
+                    final int quantity = rs.getInt("quantity");
                     resource = new Resource_Stock(id, name, quantity);
                 }
             }
@@ -53,7 +53,7 @@ public class ResourceDAO {
 
     // Create a new resource
     public int createResource(Resource_Stock resource) {
-        String sql = "INSERT INTO resource_stock (name, quantity) VALUES (?, ?)";
+        final String sql = "INSERT INTO resource_stock (name, quantity) VALUES (?, ?)";
         int rowsInserted = 0;
 
         try (Connection con = db.getConnection();
@@ -69,7 +69,7 @@ public class ResourceDAO {
 
     // Update an existing resource
     public int updateResource(long id, Resource_Stock resource) {
-        String sql = "UPDATE resource_stock SET name = ?, quantity = ? WHERE id = ?";
+        final String sql = "UPDATE resource_stock SET name = ?, quantity = ? WHERE id = ?";
         int rowsUpdated = 0;
 
         try (Connection con = db.getConnection();
@@ -86,7 +86,7 @@ public class ResourceDAO {
 
     // Delete a resource
     public void deleteResource(long id) {
-        String sql = "DELETE FROM resource_stock WHERE id = ?";
+        final String sql = "DELETE FROM resource_stock WHERE id = ?";
 
         try (Connection con = db.getConnection();
              PreparedStatement stmt = con.prepareStatement(sql)) {

@@ -3,10 +3,10 @@ name: CI - Mission Safety Checks
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   # Code quality check job

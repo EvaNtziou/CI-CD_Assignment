@@ -40,7 +40,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'adoptopenjdk'
+          distribution: 'temurin'
 
       # Install dependencies using Maven
       - name: Install dependencies
@@ -63,7 +63,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'adoptopenjdk'
+          distribution: 'temurin'
 
       # Build the Spring Boot application
       - name: Build application
@@ -82,7 +82,7 @@ jobs:
   #       uses: actions/setup-java@v2
   #       with:
   #         java-version: '17'
-  #         distribution: 'adoptopenjdk'
+  #         distribution: 'temurin'
 
   #     # Deploy the application (adjust based on your deployment process)
   #     - name: Deploy application

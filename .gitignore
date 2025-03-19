@@ -1,8 +1,12 @@
-HELP.md
-target/
+# Ignore everything in the target directory
+target/*
+
+# Exclude the Maven wrapper jar file
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+
+# Include the target directories in main and test (if necessary)
+!**/src/main/target/
+!**/src/test/target/
 
 ### STS ###
 .apt_generated

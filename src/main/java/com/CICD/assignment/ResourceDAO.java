@@ -1,9 +1,10 @@
 package com.CICD.assignment;
-
+import org.springframework.stereotype.Repository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ResourceDAO {
 
     private final SDB db = new SDB(); // Instance of SDB class

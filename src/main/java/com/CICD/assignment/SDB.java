@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SDB {
-    private static final String DB_URL = "jdbc:sqlite:src/main/resources/SDB.db.db";  // SQLite DB file path
+    private static final String DB_URL = "jdbc:sqlite:src/main/resources/SDB.db";  // SQLite DB file path
 
     static {
         try {

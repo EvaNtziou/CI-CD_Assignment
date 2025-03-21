@@ -15,6 +15,12 @@ public class SResourceController {
     }
 
     // Get all resources
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the Spring Boot Application!";
+    }
+
+    // Get all resources
     @GetMapping
     public List<Resource_Stock> getAllResources() {
         return resourceDAO.getAllResources();

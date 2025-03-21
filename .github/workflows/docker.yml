@@ -28,11 +28,11 @@ jobs:
     # Step 4: Build the Docker image
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/cicd_assign:latest .
+        docker build -t ${{ secrets.DOCKER_USERNAME }}evantz/cicd_assign:latest .
 
     # Step 5: Push the Docker image to Docker Hub
     - name: Push Docker image
       run: |
         context: .
-        docker push ${{ secrets.DOCKER_USERNAME }}/cicd_assing_repo/cicd_assign:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}evantz/cicd_assing_repo/cicd_assign:latest
 

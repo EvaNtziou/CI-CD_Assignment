@@ -33,5 +33,6 @@ jobs:
     # Step 5: Push the Docker image to Docker Hub
     - name: Push Docker image
       run: |
+        context: .
         docker push ${{ secrets.DOCKER_USERNAME }}/cicd_assing_repo:latest
 

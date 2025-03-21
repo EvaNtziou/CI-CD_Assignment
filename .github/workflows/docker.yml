@@ -34,5 +34,5 @@ jobs:
     - name: Push Docker image
       run: |
         context: .
-        docker push ${{ secrets.DOCKER_USERNAME }}/cicd_assing_repo:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/cicd_assing_repo/cicd_assign:latest
 

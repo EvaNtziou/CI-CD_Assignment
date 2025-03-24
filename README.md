@@ -1,14 +1,69 @@
-# CI-CD_Assignment
-## How is this project built
-This is a Spring Boot application written in Java. Maven has also been used as a build automation and project management tool. All of the data is stored in a relational SQLite DataBase named SDB.db.
-## What this project does
-This is a simple CRUD application that manages resource stock, including name, quantity and a unique auto-incrementing id. It uses a relational database - SQLite and exposes the required REST endpoints. It provides users with the basic functions of handling the resource stock. This includes accessing all of the resources, finding a specific one using its id, adding new resources and updating or deleting existing ones.
-## Workflows and Testing
-The code quality of this project is tested with Checkstyle. JUnit is also used for unit testing. The workflows can be viewed in [this  file](.github/workflows/ci.yml).
-## How to clone the repository
-in the command line, after you have navigated to the desired file, type the following:
+
+# CI/CD Assignment - Spring Boot Application
+## Project Overview
+This is a simple Spring Boot REST API that demonstrates CI/CD automation. The project includes:
+
+A RESTful API for managing resources (name, quantity, id)
+
+Docker support for containerization
+
+GitHub Actions for CI/CD
+
+Deployment-ready build
+
+## Technologies Used
+Java 17
+
+Spring Boot
+
+Maven
+
+Docker
+
+GitHub Actions
+
+## Project Structure
+Typical structure of a simple cicd springboot project
+
+## Setup Instructions
 1. git clone https://github.com/EvaNtziou/CI-CD_Assignment.git
 2. cd your-repository
-3. mvn install (if necessary to install dependencies)
-   
-And that's it!
+
+## Build the Project
+Ensure you have Java 17 and Maven installed.
+1. mvn clean package
+After a successful build, the JAR file will be in the target/ directory:
+target/assignment-0.0.1-SNAPSHOT.jar
+
+## Run Locally
+java -jar target/assignment-0.0.1-SNAPSHOT.jar
+The application should now be running on http://localhost:8080
+
+## Run with Docker
+1. Build the Docker Image
+docker build -t docker-username/cicd_assign:latest .
+2. Run the Container
+docker run -p 8080:8080 docker-username/cicd_assign:latest
+3. Push Docker Image to Docker Hub
+A. docker login
+B. docker tag docker-username/cicd_assign:latest docker-username/repo-name:latest
+C. docker push docker-username/repo-name:latest
+
+## CI/CD with GitHub Actions
+This project uses GitHub Actions to automate testing and deployment. The pipeline:
+
+Runs on every push to main
+Builds the project with Maven
+Creates a Docker image
+Pushes the image to Docker Hub
+
+ [Workflow file docker ](.github/workflows/docker.yml)
+[Workflow file ci ](.github/workflows/ci.yml)
+
+## API Endpoints
+Method	Endpoint	Description
+GET	/api/resources	Get all resources
+GET	/api/resources/{id}	Get resource by ID
+POST	/api/resources	Create a new resource
+PUT	/api/resources/{id}	Update a resource
+DELETE	/api/resources/{id}	Delete a resource

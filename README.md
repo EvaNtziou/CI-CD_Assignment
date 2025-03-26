@@ -61,9 +61,11 @@ Pushes the image to Docker Hub
 [Workflow file ci ](.github/workflows/ci.yml)
 
 ## API Endpoints
-Method	Endpoint	Description
-GET	/api/resources	Get all resources
-GET	/api/resources/{id}	Get resource by ID
-POST	/api/resources	Create a new resource
-PUT	/api/resources/{id}	Update a resource
-DELETE	/api/resources/{id}	Delete a resource
+
+| **Method** | **Endpoint**              | **Description**            |
+|------------|---------------------------|----------------------------|
+| `GET`      | `/api/resources`           | Get all resources          |
+| `GET`      | `/api/resources/{id}`      | Get resource by ID         |
+| `POST`     | `/api/resources`           | Create a new resource      |
+| `PUT`      | `/api/resources/{id}`      | Update an existing resource|
+| `DELETE`   | `/api/resources/{id}`      | Delete a resource          |
